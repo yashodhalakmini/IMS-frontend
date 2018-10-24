@@ -1,0 +1,99 @@
+<div class="containet">
+    <!--Navbar-->
+  
+      <mdb-navbar SideClass="navbar navbar-dark light-blue"  [containerInside]="false">
+        <mdb-navbar-brand><a class="navbar-brand" href="#">Inventary Management System</a></mdb-navbar-brand>
+      </mdb-navbar>
+
+    <!-- navbar  -->
+</div>
+  
+<div class="container-fluid">
+  
+  <div class="row acc">
+      <div class="col-lg-4"></div>
+      <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+  
+        <!-- Default form login -->
+        <form class="text-center border border-light p-5">
+  
+          <p class="h4 mb-4">Admin Inventary Manage</p>
+  
+          <!--ID -->
+          <input type="text" id="defaultLoginFormText" class="form-control mb-4" placeholder="Id">
+  
+          
+          <!-- Subject -->
+          <label>Item Type</label>
+          <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+            <option value="" disabled>Choose option</option>
+            <option value="1" selected>Wooden</option>
+            <option value="2">Steel</option>
+            <option value="2">Cushion</option>
+            <option value="2">Electronic</option>
+            
+          </select>
+
+          <!-- Subject -->
+          <label>Item</label>
+          <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+            <option value="" disabled>Choose option</option>
+            <option value="1" selected>Chair</option>
+            <option value="2">Table</option>
+            <option value="3">CPU</option>
+            <option value="4">Monitor</option>
+            <option value="5">KeyBoard</option>
+            <option value="6">Mouse</option>
+            <option value="7">Cupboard</option>
+            <option value="8">Locker</option>
+            
+          </select>
+
+          <!-- Subject -->
+          <label>Status</label>
+          <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+            <option value="" disabled>Choose option</option>
+            <option value="1" selected>Work-Well</option>
+            <option value="2">Damage</option>
+            <option value="3">Out-of-order</option>
+            
+          </select>
+          <!-- Subject -->
+          <label>Lecture Hall</label>
+          <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+            <option value="" disabled>Choose option</option>
+            <option value="1" selected>NLH</option>
+            <option value="2">104</option>
+            <option value="3">Computer-lab1</option>
+            <option value="3">Computer-lab2</option>
+            <option value="3">Department Office</option>
+            
+          </select>
+    
+          
+          <div class="container-fluid">
+            <div class="row">  
+              <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit">Add</button></div>
+              <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit">Update</button></div>
+              <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit">Delete</button></div>
+            </div>
+          </div>
+      
+          <div class="container-fluid">
+              <div class="row aff">  
+                <div class="col-lg-12" ><button mdbBtn color="info" block="true" class="my-4" type="submit">View Items</button></div>
+              </div>
+          </div>
+      
+
+        </form>
+        <!-- Default form login -->
+      </div>
+      <div class="col-lg-3"></div>
+    </div>
+  </div> 
+
+
+ 
+  
+

@@ -2,14 +2,48 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+// MDB Angular Free
+import { CheckboxModule, WavesModule, ButtonsModule, InputsModule, IconsModule} from 'angular-bootstrap-md';
+import { AdminComponent } from './admin/admin.component';
+import { UsermanageComponent } from './usermanage/usermanage.component';
+import { UserinventorymanageComponent } from './userinventorymanage/userinventorymanage.component';
+import { AdmininventorymanageComponent } from './admininventorymanage/admininventorymanage.component';
+import { HallmanageComponent } from './hallmanage/hallmanage.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import { ViewitemsComponent} from './viewitems/viewitems.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    AdminComponent,
+    UsermanageComponent,
+    UserinventorymanageComponent,
+    AdmininventorymanageComponent,
+    HallmanageComponent,
+    ViewitemsComponent
   ],
   imports: [
-    BrowserModule
+    MDBBootstrapModule,
+    BrowserModule,
+    CheckboxModule,
+    WavesModule,
+    ButtonsModule,
+    InputsModule,
+    IconsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+     MatCheckboxModule,
+    
+
+
+    
   ],
+  schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],
   bootstrap: [AppComponent]
 })
