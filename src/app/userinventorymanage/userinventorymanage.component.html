@@ -3,6 +3,8 @@
   
       <mdb-navbar SideClass="navbar navbar-dark light-blue"  [containerInside]="false">
         <mdb-navbar-brand><a class="navbar-brand" href="#">Inventary Management System</a></mdb-navbar-brand>
+        <mdb-navbar-brand><a class="navbar-brand" href="#">Home</a></mdb-navbar-brand>
+        <mdb-navbar-brand><a class="navbar-brand lot " href="#">Logout</a></mdb-navbar-brand>
       </mdb-navbar>
 </div>
   
@@ -20,15 +22,27 @@
           <!-- ID -->
           <input type="text" id="defaultLoginFormText" class="form-control mb-4" placeholder="Id">
   
-          
+          <!-- Subject -->
+          <label>Lecture Hall</label>
+          <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+            <option value="" disabled>Choose option</option>
+            <option value="1" selected>NLH</option>
+            <option value="2">104</option>
+            <option value="3">Computer-lab1</option>
+            <option value="4">Computer-lab2</option>
+            <option value="5">Department Office</option>
+            
+          </select>
             <!-- Subject -->
           <label>Item Type</label>
           <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
             <option value="" disabled>Choose option</option>
             <option value="1" selected>Wooden</option>
             <option value="2">Steel</option>
-            <option value="2">Cushion</option>
-            <option value="2">Electronic</option>
+            <option value="3">Cushion</option>
+            <option value="4">Electronic</option>
+            <option value="5">Plastic</option>
+
             
           </select>
           <!-- Subject -->
@@ -43,6 +57,9 @@
             <option value="6">Mouse</option>
             <option value="7">Cupboard</option>
             <option value="8">Locker</option>
+            <option value="9">Over-HeadProjecter</option>
+            <option value="10">MultimediaScreen</option>
+
             
           </select>
 
@@ -55,17 +72,7 @@
             <option value="3">Out-of-order</option>
             
           </select>
-          <!-- Subject -->
-          <label>Lecture Hall</label>
-          <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
-            <option value="" disabled>Choose option</option>
-            <option value="1" selected>NLH</option>
-            <option value="2">104</option>
-            <option value="3">Computer-lab1</option>
-            <option value="3">Computer-lab2</option>
-            <option value="3">Department Office</option>
-            
-          </select>
+          
     
         <div class="container-fluid">
           <div class="row">  
