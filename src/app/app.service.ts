@@ -14,9 +14,8 @@ export class AppService {
 
 
   login(data){
-    
-    return this._http.post<any>('api/users/login',data);
-    
+    return this._http.post<any>('api/authenticate/login',data);
+
   }
 
   loggedIn(){
@@ -43,9 +42,9 @@ export class AppService {
 
 
 
-  register(data){
-    return this._http.post<any>('/api/users/register',data);
-  }
+  // register(data){
+  //   return this._http.post<any>('/api/users/register',data);
+  // }
 
 
   authenticateUser() {
@@ -55,9 +54,9 @@ export class AppService {
     if (this.getUserpermissions() === "user") {
       console.log(this.getUserpermissions());
       
-      this.router.navigate(["/addshop"]);
+      this.router.navigate(["/user"]);
     }
-    else if (this.getUserpermissions() === "Admin") {
+    else if (this.getUserpermissions() === "admin") {
      
       console.log(this.getUserpermissions());
       this.router.navigate(["/admin"]);
@@ -68,9 +67,19 @@ export class AppService {
     }
   }
 
-  addShop(data){
+  addUser(data){
 
-    return this._http.post<any>('/api/users/addshop',data);
+     return this._http.post<any>('/api/users/add',data);
+   }
+
+
+  logout(){
+    localStorage.clear();
   }
+
+  searchUser(data){
+   return this._http.post<any>("/api/users/search",data);
+  }
+
   
 }

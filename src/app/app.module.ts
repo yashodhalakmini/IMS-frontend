@@ -19,6 +19,7 @@ import { AppRoutingModule } from './app.routes';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppService } from './app.service';
+import { AdminAuthGaurd, UserAuthGaurd } from './auth.gaurd';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { AppService } from './app.service';
     
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [AppService],
+  providers: [AppService,AdminAuthGaurd,UserAuthGaurd],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

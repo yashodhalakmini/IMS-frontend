@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Validators, FormBuilder } from '@angular/forms';
+import { AppService } from '../app.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usermanage',
@@ -7,8 +10,46 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UsermanageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb:FormBuilder,private service :AppService, private router:Router) { 
+    this.search = fb.control("");
+  }
 
+  private search;
+  private registerForm = this.fb.group({
+    username:['',Validators.required],
+    usertype:['',Validators.required,],
+    password:['',Validators.required,],
+  });
+
+
+  
+  private responseMessage="";
+
+  registerUser(){
+    if(this.registerForm.valid){
+        this.service.addUser(this.registerForm.value).subscribe(data=>{
+          console.log(data);
+          this.responseMessage=data;
+        },err=>{
+          console.log(err);
+        });
+    }
+
+    console.log(this.registerForm.value);
+  }
+
+  searchUser(){
+    console.log(this.search.value);
+    this.service.searchUser({username:this.search.value}).subscribe(data=>{
+      console.log(data);
+      this.registerForm.patchValue({
+        username:[data.username],
+        usertype:[data.usertype],
+      });
+    },err=>{
+      console.log(err);
+    });
+  }
   ngOnInit() {
   }
 

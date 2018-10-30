@@ -1,6 +1,6 @@
-<!-- <div class="containet">
+<div class="containet">
   
- Navbar
+ <!-- Navbar -->
 
     <mdb-navbar SideClass="navbar navbar-dark blue darken-2"  [containerInside]="false">
       <mdb-navbar-brand><a class="navbar-brand" href="#">Inventary Management System</a></mdb-navbar-brand>
@@ -8,7 +8,7 @@
       <mdb-navbar-brand><a class="navbar-brand lot " href="#">Logout</a></mdb-navbar-brand>
     </mdb-navbar>
 
-  navbar  
+  <!-- navbar   -->
 
 </div>
 
@@ -19,20 +19,25 @@
     <div class="col-lg-4"></div>
     <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
 
-      Default form login
+      <!-- Default form login -->
       <form class="text-center border border-light p-5">
 
         <p class="h4 mb-4">Admin Home</p>
 
-        <button mdbBtn color="info" block="true" class="my-4" type="submit">User Manange</button>
-        <button mdbBtn color="info" block="true" class="my-4" type="submit">Inventary Manage</button>
-        <button mdbBtn color="info" block="true" class="my-4" type="submit">Hall Manage</button>
+        <a [routerLink]="['/adminusermanage']"> <button mdbBtn color="info" block="true" class="my-4" type="submit">User Manange</button></a>
+        <a [routerLink]="['/admininventory']"> <button mdbBtn color="info" block="true" class="my-4" type="submit">Inventary Manage</button></a>
+        <a [routerLink]="['/adminhallmanage']"> <button mdbBtn color="info" block="true" class="my-4" type="submit">Hall Manage</button></a>
+
+
+      
 
       </form>
-      Default form login
+      <!-- Default form login -->
       
     </div>
     <div class="col-lg-4"></div>
   </div>
 </div>
- -->
+ 
+
+

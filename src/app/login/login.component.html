@@ -36,11 +36,11 @@
         </div>
 
         <!-- Sign in button -->
-        <button mdbBtn color="info" block="true" class="my-4" type="submit">Sign in</button>
+        <button mdbBtn color="info" block="true" class="my-4" (click)="login()">Sign in</button>
 
         <!-- Register -->
        
-
+        <div class="error"> <strong>{{error}}</strong> </div>
       </form>
       <!-- Default form login -->
     </div>

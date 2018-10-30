@@ -1,5 +1,5 @@
-<!-- <div class="containet"> 
-  Navbar
+<div class="containet"> 
+  <!-- Navbar -->
 
     <mdb-navbar SideClass="navbar navbar-dark light-blue"  [containerInside]="false">
       <mdb-navbar-brand><a class="navbar-brand" href="#">Inventary Management System</a></mdb-navbar-brand>
@@ -11,45 +11,55 @@
 </div>
 
 <div class="container-fluid">
-
+  <br><br><br> 
+<div class="row">
+  <div class="col-md-4"></div>
+ 
+  <div class="col-md-4"> <input type="text" id="defaultLoginForm" class="form-control mb-4" placeholder="search" [formControl]="search" name="search"> <button mdbBtn color="info" block="true" class="my-4" type="submit"  (click)="searchUser()">Search</button>
+    {{search.value|json}}
+  </div>
+  <div class="col-md-4"></div>
+</div>
   <div class="row acc">
     <div class="col-lg-4"></div>
     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
 
-      Default form login
-      <form class="text-center border border-light p-5">
+      <!-- Default form login -->
+      <form class="text-center border border-light p-5" [formGroup]="registerForm">
 
         <p class="h4 mb-4">User Manage</p>
 
-        User Name
-        <input type="text" id="defaultLoginFormText" class="form-control mb-4" placeholder="user name">
+        <!-- User Name -->
+        <input type="text" id="defaultLoginFormText" class="form-control mb-4" placeholder="user name" formControlName="username" required>
+         <!-- Password  -->
+        <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="password" formControlName="password" required>
 
-        
-        Subject
-        <label>User Type</label>
-        <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
-          <option value="" disabled>Choose option</option>
-          <option value="1" selected>Admin</option>
-          <option value="2">USer</option>
+        <!-- Subject -->
+       
+        <select formControlName="usertype" class="browser-default custom-select mb-4" required> 
+          <option value="" disabled>Choose role</option>
+          <option value="admin" >Admin</option>
+          <option value="user"  selected>User</option>
           
         </select>
 
-         Password 
-        <input type="password" id="defaultLoginFormPassword" class="form-control mb-4" placeholder="password">
-
+        
+       
         
         <div class="container-fluid">
           <div class="row">  
-            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit">Add</button></div>
-            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit">Update</button></div>
-            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit">Delete</button></div>
+            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit" (click)="registerUser()">Add</button></div>
+            <!-- <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit">Update</button></div>
+            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit">Delete</button></div> -->
           </div>
         </div>
 
-        
+        {{responseMessage}}
       </form>
-      Default form login
+      <!-- Default form login -->
     </div>
+<!-- ssss -->
+    <!-- {{registerForm.value|json}} -->
     <div class="col-lg-3"></div>
   </div>
-</div>  -->
+</div> 
