@@ -15,6 +15,10 @@ import { HallmanageComponent } from './hallmanage/hallmanage.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 import { ViewitemsComponent} from './viewitems/viewitems.component';
+import { AppRoutingModule } from './app.routes';
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { AppService } from './app.service';
 
 @NgModule({
   declarations: [
@@ -37,14 +41,18 @@ import { ViewitemsComponent} from './viewitems/viewitems.component';
     IconsModule,
     BrowserAnimationsModule,
     MatButtonModule,
-     MatCheckboxModule,
+    MatCheckboxModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule
     
 
 
     
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
+  providers: [AppService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
