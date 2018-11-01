@@ -80,6 +80,18 @@ export class AppService {
   searchUser(data){
    return this._http.post<any>("/api/users/search",data);
   }
-
   
+  // deleteUser(data){
+  //   return this._http.delete<any>("/api/users/delete",data);
+  // }
+
+  addHall(data){
+
+    return this._http.post<any>('/api/hall/add',data);
+  }
+  
+  searchHall(data){
+    return this._http.post<any>("/api/hall/search",data);
+   }
+
 }

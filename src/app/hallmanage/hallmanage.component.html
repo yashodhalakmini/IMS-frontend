@@ -21,10 +21,23 @@
   
         <p class="h4 mb-4">Hall Manage</p>
        <!-- Search form -->
-        <form class="form-inline md-form form-sm active-cyan active-cyan-2">
+        <!-- <form class="form-inline md-form form-sm active-cyan active-cyan-2">
             <i class="fa fa-search" aria-hidden="true"></i>
             <input class="form-control form-control-sm ml-3 w-75" type="text" placeholder="Search" aria-label="Search" mdbInputDirective>
-        </form>
+        </form> -->
+
+        <!-- original search hall-->
+        <!-- <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-8">
+            <form class="form-inline md-form mr-auto mb-4">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search" [formControl]="search" aria-label="Search">
+              <button class="btn btn-primary btn-rounded btn-sm my-0" type="submit" (click)="searchUser()">Search</button>
+              {{search.value|json}} -->
+            <!-- </form>
+           </div>
+        </div> -->
+
 
         <!-- Hall Name -->
         <input type="text" id="defaultLoginFormText" class="form-control mb-4" placeholder="Hall Name">
@@ -32,7 +45,7 @@
         
         <div class="container-fluid">
           <div class="row">  
-            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit">Add</button></div>
+            <!-- <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit" (click)="registerHall()">Add</button></div> -->
             <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit">Update</button></div>
             <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit">Delete</button></div>
           </div>

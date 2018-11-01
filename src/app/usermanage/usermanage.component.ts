@@ -50,6 +50,20 @@ export class UsermanageComponent implements OnInit {
       console.log(err);
     });
   }
+
+  // deleteUser(){
+  //   if(this.registerForm.valid){
+  //       this.service.deleteUser(this.registerForm.value).subscribe(data=>{
+  //         console.log(data);
+  //         this.responseMessage=data;
+  //       },err=>{
+  //         console.log(err);
+  //       });
+  //   }
+
+  //   console.log(this.registerForm.value);
+  // }
+
   ngOnInit() {
   }
 

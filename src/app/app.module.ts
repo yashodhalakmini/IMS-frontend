@@ -21,6 +21,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppService } from './app.service';
 import { AdminAuthGaurd, UserAuthGaurd } from './auth.gaurd';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { AdminAuthGaurd, UserAuthGaurd } from './auth.gaurd';
     UserinventorymanageComponent,
     AdmininventorymanageComponent,
     HallmanageComponent,
-    ViewitemsComponent
+    ViewitemsComponent,
+    
   ],
   imports: [
     MDBBootstrapModule,
