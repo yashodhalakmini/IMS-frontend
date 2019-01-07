@@ -7,6 +7,7 @@ import { UserinventorymanageComponent } from "./userinventorymanage/userinventor
 import { AdminAuthGaurd, UserAuthGaurd } from "./auth.gaurd";
 import { HallmanageComponent } from "./hallmanage/hallmanage.component";
 import { UsermanageComponent } from "./usermanage/usermanage.component";
+import { ViewitemsComponent } from "./viewitems/viewitems.component";
 // import { ViewitemsComponent } from "./viewitems/viewitems.Component";
 
 
@@ -18,7 +19,7 @@ const routes: Routes = [
     {path:'admininventory',component:AdmininventorymanageComponent},
     {path:'adminhallmanage',component:HallmanageComponent},
     {path:'adminusermanage',component:UsermanageComponent},
-    // {path:'adminviewitems',component:ViewitemsComponent}
+     {path:'adminviewitems',component:ViewitemsComponent}
 
    
   

@@ -4,7 +4,7 @@
 
     <mdb-navbar SideClass="navbar navbar-dark blue darken-2"  [containerInside]="false">
       <mdb-navbar-brand><a class="navbar-brand" href="#">Inventary Management System</a></mdb-navbar-brand>
-      <mdb-navbar-brand><a class="navbar-brand" href="#">Home</a></mdb-navbar-brand>
+      <mdb-navbar-brand><a class="navbar-brand" [routerLink]="['/login']">Home</a></mdb-navbar-brand>
       <mdb-navbar-brand><a class="navbar-brand lot " href="#">Logout</a></mdb-navbar-brand>
     </mdb-navbar>
 
@@ -29,7 +29,7 @@
         <a [routerLink]="['/adminhallmanage']"> <button mdbBtn color="info" block="true" class="my-4" type="submit">Hall Manage</button></a>
 
 
-      
+       
 
       </form>
       <!-- Default form login -->

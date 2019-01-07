@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-viewitems',
@@ -6,14 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./viewitems.component.scss']
 })
 export class ViewitemsComponent implements OnInit {
-
-  constructor() { }
+  private items;
+ 
+  constructor(private service:AppService) { }
 
   ngOnInit() {
+    this.getItems();
   }
+
+
+  getItems(){
+    this.service.getItems().subscribe(data=>{
+      console.log(data);
+      this.items=data;
+    },err=>{});
+  }
+
+  
 
 }
 export class TableHeadOptionsComponent {
+ 
   elements: any = [
     {id: 1, first: 'Mark', last: 'Otto', handle: '@mdo'},
     {id: 2, first: 'Jacob', last: 'Thornton', handle: '@fat'},
@@ -22,4 +36,6 @@ export class TableHeadOptionsComponent {
 
   headElements = ['ID', 'First', 'Last', 'Handle'];
 
+
+ 
 }

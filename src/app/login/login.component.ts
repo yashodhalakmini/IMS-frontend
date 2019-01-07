@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private fb:FormBuilder,private service :AppService, private router:Router) { }
+  constructor(private fb:FormBuilder, private service:AppService, private router:Router) { }
 
   ngOnInit() {
     this.service.logout();

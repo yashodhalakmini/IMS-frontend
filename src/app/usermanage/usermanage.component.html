@@ -3,8 +3,8 @@
 
     <mdb-navbar SideClass="navbar navbar-dark light-blue"  [containerInside]="false">
       <mdb-navbar-brand><a class="navbar-brand" href="#">Inventary Management System</a></mdb-navbar-brand>
-      <mdb-navbar-brand><a class="navbar-brand" href="#">AdminHome</a></mdb-navbar-brand>
-      <mdb-navbar-brand><a class="navbar-brand" href="#">Home</a></mdb-navbar-brand>
+      <mdb-navbar-brand><a class="navbar-brand" [routerLink]="['/admin']">AdminHome</a></mdb-navbar-brand>
+      <mdb-navbar-brand><a class="navbar-brand" [routerLink]="['/login']">Home</a></mdb-navbar-brand>
       <mdb-navbar-brand><a class="navbar-brand lot " href="#">Logout</a></mdb-navbar-brand>
     </mdb-navbar>
     
@@ -48,6 +48,9 @@
              </div>
           </div>
 
+<!-- ID -->
+<input type="text" id="defaultLoginFormId" class="form-control mb-4" placeholder="ID" formControlName="ID" required>
+
         <!-- User Name -->
         <input type="text" id="defaultLoginFormText" class="form-control mb-4" placeholder="user name" formControlName="username" required>
          <!-- Password  -->
@@ -67,9 +70,9 @@
         
         <div class="container-fluid">
           <div class="row">  
-            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit" (click)="registerUser()">Add</button></div>
-            <!--<div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit">Update</button></div>-->
-            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit" (click)="deleteUser()">Delete</button></div> 
+            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4"  (click)="registerUser()">Add</button></div>
+            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" (click)=updateUser()>Update</button></div>
+            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4"  (click)="deleteUser()">Delete</button></div> 
           </div>
         </div>
 

@@ -17,16 +17,17 @@ export class HallmanageComponent implements OnInit {
 
    private search;
   private registerForm = this.fb.group({
-    username:['',Validators.required],
-    usertype:['',Validators.required,],
-    password:['',Validators.required,],
+    ID:['',Validators.required],
+    hallname:['',Validators.required],
+    // usertype:['',Validators.required,],
+    // password:['',Validators.required,],
   });
 
   private responseMessage="";
 
   registerHall(){
     if(this.registerForm.valid){
-        this.service.addHall(this.registerForm.value).subscribe(data=>{
+        this.service.registerHall(this.registerForm.value).subscribe(data=>{
           console.log(data);
           this.responseMessage=data;
         },err=>{
@@ -42,7 +43,8 @@ export class HallmanageComponent implements OnInit {
     this.service.searchHall({username:this.search.value}).subscribe(data=>{
       console.log(data);
       this.registerForm.patchValue({
-        hallname:[data.hallname],
+        // ID:[data.ID],
+        hallname:[data.hallname]
         // usertype:[data.usertype],
       });
     },err=>{
@@ -53,5 +55,22 @@ export class HallmanageComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  // registerhall(){
+  //   console.log(this.registerForm.value);
+  //   if(this.registerForm.valid){
+  //    this.service.additem(this.registerForm.value).subscribe(data=>{
+  //       console.log("Hall added");
+  //    },err=>{});
+       
+  //   }
+    
+  // }
+
+  deletehall(){
+    if(this.registerForm.value.id!=""){
+      this.service.deleteItem(this.registerForm.value.id).subscribe(data=>{},err=>{});
+    }
+    }
 
 }

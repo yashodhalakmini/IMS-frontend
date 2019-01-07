@@ -85,13 +85,37 @@ export class AppService {
   //   return this._http.delete<any>("/api/users/delete",data);
   // }
 
-  addHall(data){
 
+  registerHall(data){
     return this._http.post<any>('/api/hall/add',data);
   }
+
   
   searchHall(data){
     return this._http.post<any>("/api/hall/search",data);
    }
+
+
+
+
+  addItem(data){
+    return this._http.post<any>("/api/inventory",data);
+  }
+
+  deleteItem(id){
+    return this._http.delete("api/users"+id);
+  }
+
+  deleteUser(id){
+    return this._http.delete("api/users/"+id);
+  }
+
+  updateUser(data){
+    return this._http.put("api/users",data);
+  }
+
+  getItems(){
+    return this._http.get("api/userinventory");
+  }
 
 }

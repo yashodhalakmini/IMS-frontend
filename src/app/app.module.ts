@@ -20,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { AppService } from './app.service';
 import { AdminAuthGaurd, UserAuthGaurd } from './auth.gaurd';
+import { NavbarComponent } from './navbar/navbar.component';
+
 
 
 @NgModule({
@@ -32,6 +34,8 @@ import { AdminAuthGaurd, UserAuthGaurd } from './auth.gaurd';
     AdmininventorymanageComponent,
     HallmanageComponent,
     ViewitemsComponent,
+    NavbarComponent,
+    
     
   ],
   imports: [
