@@ -13,7 +13,7 @@ export class UserinventorymanageComponent implements OnInit {
 
   private itemForm = this.fb.group({
     id:['',Validators.required],
-    itemhall:["",Validators.required],
+    hallname:["",Validators.required],
     itemtype:["",Validators.required],
     itemname:["",Validators.required],
     status:["",Validators.required]
@@ -29,10 +29,10 @@ export class UserinventorymanageComponent implements OnInit {
   ngOnInit() {
   }
 
-  addItem(){
+  adduserItem(){
     console.log(this.itemForm.value);
     if(this.itemForm.valid){
-     this.service.addItem(this.itemForm.value).subscribe(data=>{
+     this.service.adduserItem(this.itemForm.value).subscribe(data=>{
         console.log("item added");
      },err=>{});
        

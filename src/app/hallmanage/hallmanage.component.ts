@@ -25,9 +25,9 @@ export class HallmanageComponent implements OnInit {
 
   private responseMessage="";
 
-  registerHall(){
+  addhall(){
     if(this.registerForm.valid){
-        this.service.registerHall(this.registerForm.value).subscribe(data=>{
+        this.service.addhall(this.registerForm.value).subscribe(data=>{
           console.log(data);
           this.responseMessage=data;
         },err=>{

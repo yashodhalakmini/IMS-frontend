@@ -44,7 +44,7 @@
           <div class="col-md-8">
             <form class="form-inline md-form mr-auto mb-4">
               <input class="form-control mr-sm-2" type="text" placeholder="Search" [formControl]="search" aria-label="Search">
-              <button class="btn btn-primary btn-rounded btn-sm my-0" type="submit" (click)="searchUser()">Search</button>
+              <button class="btn btn-primary btn-rounded btn-sm my-0" type="submit" (click)="searchhall()">Search</button>
               <!-- {{search.value|json}} -->
             </form>
            </div>
@@ -57,7 +57,7 @@
         
         <div class="container-fluid">
           <div class="row">  
-            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit" (click)="registerhall()">Add</button></div>
+            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit" (click)="addhall()">Add</button></div>
             <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit">Update</button></div>
             <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4"(click)="deletehall">Delete</button></div>
           </div>

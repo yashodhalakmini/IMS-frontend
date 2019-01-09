@@ -86,8 +86,15 @@ export class AppService {
   // }
 
 
-  registerHall(data){
-    return this._http.post<any>('/api/hall/add',data);
+  // registerHall(data){
+  //   return this._http.post<any>('/api/hall/add',data);
+  // }
+  
+  // addhall(data){
+  //   return this._http.post<any>('/api/hall/add',data);
+  // }
+  addhall(data){
+    return this._http.post<any>('/api/hall',data);
   }
 
   
@@ -103,12 +110,20 @@ export class AppService {
   }
 
   deleteItem(id){
-    return this._http.delete("api/users"+id);
+    return this._http.delete("api/inventory/"+id);
   }
+ // deleteItem(id){
+    //   return this._http.delete("api/users"+id);
+    // }
+  adduserItem(data){
+ return this._http.post<any>("api/userinventory",data);
+  }
+
 
   deleteUser(id){
     return this._http.delete("api/users/"+id);
   }
+  
 
   updateUser(data){
     return this._http.put("api/users",data);
@@ -116,6 +131,9 @@ export class AppService {
 
   getItems(){
     return this._http.get("api/userinventory");
+  }
+  getHalls(){
+    return this._http.get("api/hall");
   }
 
 }

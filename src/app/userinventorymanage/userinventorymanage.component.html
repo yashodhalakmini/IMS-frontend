@@ -24,7 +24,7 @@
 
         <!-- Subject -->
         <label>Lecture Hall</label>
-        <select formControlName="itemhall" class="browser-default custom-select mb-4">
+        <select formControlName="hallname" class="browser-default custom-select mb-4">
           <option value="" disabled>Choose option</option>
           <option value="NLH" selected>NLH</option>
           <option value="104">104</option>
@@ -76,7 +76,7 @@
 
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-6"><button mdbBtn color="info" block="true" class="my-4" (click)="addItem()">Add</button></div>
+            <div class="col-lg-6"><button mdbBtn color="info" block="true" class="my-4" (click)="adduserItem()">Add</button></div>
             <div class="col-lg-6"><button mdbBtn color="info" block="true" class="my-4" type="submit">Update</button></div>
             <!-- <div class="col-lg-4"><button mdbBtn color="info" block="true" class="my-4" (click)="deleteItem()">Delete</button></div> -->
           </div>
