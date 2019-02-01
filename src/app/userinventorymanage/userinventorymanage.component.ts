@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder,Validators } from '@angular/forms';
+import { AppService } from '../app.service';
 
 @Component({
   selector: 'app-userinventorymanage',
@@ -7,9 +9,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserinventorymanageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private fb:FormBuilder,private service: AppService) { }
+
+  private itemForm = this.fb.group({
+    id:['',Validators.required],
+    hallname:["",Validators.required],
+    itemtype:["",Validators.required],
+    itemname:["",Validators.required],
+    status:["",Validators.required]
+  
+  
+      
+    });
+
+
+
+
 
   ngOnInit() {
   }
+
+  adduserItem(){
+    console.log(this.itemForm.value);
+    if(this.itemForm.valid){
+     this.service.adduserItem(this.itemForm.value).subscribe(data=>{
+        console.log("item added");
+     },err=>{});
+       
+        
+        
+     
+    }
+    
+  }
+
+  // deleteItem(){
+  // if(this.itemForm.value.id!=""){
+  //   this.service.deleteItem(this.itemForm.value.id).subscribe(data=>{},err=>{});
+  // }
+  // }
+
 
 }

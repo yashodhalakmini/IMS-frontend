@@ -3,23 +3,23 @@
 
     <mdb-navbar SideClass="navbar navbar-dark light-blue"  [containerInside]="false">
       <mdb-navbar-brand><a class="navbar-brand" href="#">Inventary Management System</a></mdb-navbar-brand>
-      <mdb-navbar-brand><a class="navbar-brand" href="#">AdminHome</a></mdb-navbar-brand>
-      <mdb-navbar-brand><a class="navbar-brand" href="#">Home</a></mdb-navbar-brand>
+      <mdb-navbar-brand><a class="navbar-brand" [routerLink]="['/admin']">AdminHome</a></mdb-navbar-brand>
+      <mdb-navbar-brand><a class="navbar-brand" [routerLink]="['/login']">Home</a></mdb-navbar-brand>
       <mdb-navbar-brand><a class="navbar-brand lot " href="#">Logout</a></mdb-navbar-brand>
     </mdb-navbar>
     
 </div>
 
 <div class="container-fluid">
-  <br><br><br> 
-<div class="row">
+
+<!-- <div class="row">
   <div class="col-md-4"></div>
  
   <div class="col-md-4"> <input type="text" id="defaultLoginForm" class="form-control mb-4" placeholder="search" [formControl]="search" name="search"> <button mdbBtn color="info" block="true" class="my-4" type="submit"  (click)="searchUser()">Search</button>
     {{search.value|json}}
   </div>
   <div class="col-md-4"></div>
-</div>
+</div> -->
   <div class="row acc">
     <div class="col-lg-4"></div>
     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
@@ -28,6 +28,28 @@
       <form class="text-center border border-light p-5" [formGroup]="registerForm">
 
         <p class="h4 mb-4">User Manage</p>
+          <!-- search user -->
+          <!-- <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4"> <input type="text" id="defaultLoginForm" class="form-control mb-4" placeholder="search" [formControl]="search" name="search"> <button mdbBtn color="info" block="true" class="my-4" type="submit"  (click)="searchUser()">Search</button>
+              {{search.value|json}}
+            </div>
+            <div class="col-md-4"></div>
+          </div> -->
+          <!-- search user -->
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-8">
+              <form class="form-inline md-form mr-auto mb-4">
+                <input class="form-control mr-sm-2" type="text" placeholder="Search" [formControl]="search" aria-label="Search">
+                <button class="btn btn-primary btn-rounded btn-sm my-0" type="submit" (click)="searchUser()">Search</button>
+                <!-- {{search.value|json}} -->
+              </form>
+             </div>
+          </div>
+
+<!-- ID -->
+<input type="text" id="defaultLoginFormId" class="form-control mb-4" placeholder="ID" formControlName="ID" required>
 
         <!-- User Name -->
         <input type="text" id="defaultLoginFormText" class="form-control mb-4" placeholder="user name" formControlName="username" required>
@@ -48,9 +70,9 @@
         
         <div class="container-fluid">
           <div class="row">  
-            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit" (click)="registerUser()">Add</button></div>
-            <!-- <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit">Update</button></div>
-            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" type="submit">Delete</button></div> -->
+            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4"  (click)="registerUser()">Add</button></div>
+            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4" (click)=updateUser()>Update</button></div>
+            <div class="col-lg-4" ><button mdbBtn color="info" block="true" class="my-4"  (click)="deleteUser()">Delete</button></div> 
           </div>
         </div>
 

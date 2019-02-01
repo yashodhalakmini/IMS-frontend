@@ -80,6 +80,60 @@ export class AppService {
   searchUser(data){
    return this._http.post<any>("/api/users/search",data);
   }
+  
+  // deleteUser(data){
+  //   return this._http.delete<any>("/api/users/delete",data);
+  // }
+
+
+  // registerHall(data){
+  //   return this._http.post<any>('/api/hall/add',data);
+  // }
+  
+  // addhall(data){
+  //   return this._http.post<any>('/api/hall/add',data);
+  // }
+  addhall(data){
+    return this._http.post<any>('/api/hall',data);
+  }
 
   
+  searchHall(data){
+    return this._http.post<any>("/api/hall/search",data);
+   }
+
+
+
+
+  addItem(data){
+    return this._http.post<any>("/api/inventory",data);
+  }
+
+  deleteItem(id){
+    return this._http.delete("api/inventory/"+id);
+  }
+ // deleteItem(id){
+    //   return this._http.delete("api/users"+id);
+    // }
+  adduserItem(data){
+ return this._http.post<any>("api/userinventory",data);
+  }
+
+
+  deleteUser(id){
+    return this._http.delete("api/users/"+id);
+  }
+  
+
+  updateUser(data){
+    return this._http.put("api/users",data);
+  }
+
+  getItems(){
+    return this._http.get("api/userinventory");
+  }
+  getHalls(){
+    return this._http.get("api/hall");
+  }
+
 }

@@ -3,7 +3,7 @@
 
   <mdb-navbar SideClass="navbar navbar-dark light-blue" [containerInside]="false">
     <mdb-navbar-brand><a class="navbar-brand" href="#">Inventary Management System</a></mdb-navbar-brand>
-    <mdb-navbar-brand><a class="navbar-brand" href="#">Home</a></mdb-navbar-brand>
+    <mdb-navbar-brand><a class="navbar-brand" [routerLink]="['/login']">Home</a></mdb-navbar-brand>
     <mdb-navbar-brand><a class="navbar-brand lot " href="#">Logout</a></mdb-navbar-brand>
   </mdb-navbar>
 </div>
@@ -15,74 +15,75 @@
     <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
 
       <!-- Default form login -->
-      <form class="text-center border border-light p-5">
+      <form class="text-center border border-light p-5" [formGroup]="itemForm">
 
-        <p class="h4 mb-4">User Manage</p>
+        <p class="h4 mb-4">User Inventory Manage</p>
 
         <!-- ID -->
         <input type="text" id="defaultLoginFormText" class="form-control mb-4" placeholder="Id">
 
         <!-- Subject -->
         <label>Lecture Hall</label>
-        <!-- <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+        <select formControlName="hallname" class="browser-default custom-select mb-4">
           <option value="" disabled>Choose option</option>
-          <option value="1" selected>NLH</option>
-          <option value="2">104</option>
-          <option value="3">Computer-lab1</option>
-          <option value="4">Computer-lab2</option>
-          <option value="5">Department Office</option>
+          <option value="NLH" selected>NLH</option>
+          <option value="104">104</option>
+          <option value="Computer-lab1">Computer-lab1</option>
+          <option value="Computer-lab2">Computer-lab2</option>
+          <option value="Department Office">Department Office</option>
 
-        </select> -->
+        </select> 
         <!-- Subject -->
         <label>Item Type</label>
-        <!-- <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+        <select formControlName="itemtype" class="browser-default custom-select mb-4">
           <option value="" disabled>Choose option</option>
-          <option value="1" selected>Wooden</option>
-          <option value="2">Steel</option>
-          <option value="3">Cushion</option>
-          <option value="4">Electronic</option>
-          <option value="5">Plastic</option>
+          <option value="Wooden" selected>Wooden</option>
+          <option value="Steel">Steel</option>
+          <option value="Cushion">Cushion</option>
+          <option value="Electronic">Electronic</option>
+          <option value="Plastic">Plastic</option>
 
 
-        </select> -->
+        </select> 
         <!-- Subject -->
         <label>Item</label>
-        <!-- <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+         <select formControlName="itemname" class="browser-default custom-select mb-4">
           <option value="" disabled>Choose option</option>
-          <option value="1" selected>Chair</option>
-          <option value="2">Table</option>
-          <option value="3">CPU</option>
-          <option value="4">Monitor</option>
-          <option value="5">KeyBoard</option>
-          <option value="6">Mouse</option>
-          <option value="7">Cupboard</option>
-          <option value="8">Locker</option>
-          <option value="9">Over-HeadProjecter</option>
-          <option value="10">MultimediaScreen</option>
+          <option value="Chair" selected>Chair</option>
+          <option value="Table">Table</option>
+          <option value="CPU">CPU</option>
+          <option value="Monitor">Monitor</option>
+          <option value="KeyBoard">KeyBoard</option>
+          <option value="Mouse">Mouse</option>
+          <option value="Cupboard">Cupboard</option>
+          <option value="Locker">Locker</option>
+          <option value="Over-HeadProjecter">Over-HeadProjecter</option>
+          <option value="MultimediaScreen">MultimediaScreen</option>
 
 
-        </select> -->
+        </select> 
 
         <!-- Subject -->
         <label>Status</label>
-        <!-- <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+        <select formControlName="status" class="browser-default custom-select mb-4">
           <option value="" disabled>Choose option</option>
-          <option value="1" selected>Work-Well</option>
-          <option value="2">Damage</option>
-          <option value="3">Out-of-order</option>
+          <option value="Work-Well" selected>Work-Well</option>
+          <option value="Damage">Damage</option>
+          <option value="Out-of-order">Out-of-order</option>
 
-        </select> -->
+        </select> 
 
 
         <div class="container-fluid">
           <div class="row">
-            <div class="col-lg-4"><button mdbBtn color="info" block="true" class="my-4" type="submit">Add</button></div>
-            <div class="col-lg-4"><button mdbBtn color="info" block="true" class="my-4" type="submit">Update</button></div>
-            <div class="col-lg-4"><button mdbBtn color="info" block="true" class="my-4" type="submit">Delete</button></div>
+            <div class="col-lg-6"><button mdbBtn color="info" block="true" class="my-4" (click)="adduserItem()">Add</button></div>
+            <div class="col-lg-6"><button mdbBtn color="info" block="true" class="my-4" type="submit">Update</button></div>
+            <!-- <div class="col-lg-4"><button mdbBtn color="info" block="true" class="my-4" (click)="deleteItem()">Delete</button></div> -->
           </div>
         </div>
 
       </form>
+      {{itemForm.value|json}}
       <!-- Default form login -->
     </div>
     <div class="col-lg-3"></div>
